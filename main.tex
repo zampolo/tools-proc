@@ -1,0 +1,68 @@
+\documentclass[11pt,letter]{article}
+\usepackage[english]{babel}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{authblk}
+\usepackage{tikz}
+
+
+\title{Tools and procedures for assessing performance of visual saliency models}
+\author[1]{Ronaldo de Freitas Zampolo}
+\affil[1]{Signal Processing Laboratory, Department of Computer and Telecom Engineering, Federal University of Par\'a, Augusto Correa, 1. 66075-110, Bel\'em--PA, Brazil}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Aspects to pay attention to}
+\begin{itemize}
+	\item Number of observers
+	\item Viewing device (size)
+	\item Viewing distance
+	\item Ethics committee
+	\item Observer profile (gender, age, vision...)
+\end{itemize}
+
+\section{Databases}
+Ground-truth data !!
+\begin{itemize}
+	\item SEGRAM images
+\end{itemize}
+
+\section{Metrics}
+\subsection{Targets}
+\begin{itemize}
+	\item To understand each one of the metrics
+	\item To have available and working implementations
+\end{itemize}
+
+%To investigate:
+\subsection{sAUC (shuffled area under roc curve)}
+\subsection{Pearson's correlation coefficient}
+\input{correlation.tex }
+\subsection{Bonferroni-corrected paired Wilcoxon tests (what is it for?)}	
+\subsection{Median estimation, confidence interval, bootstrapping method}
+\subsection{JZS Bayes factor (?)}
+\subsection{Semi-partial correlations}
+\subsection{ANOVA}
+\subsection{KL-divergence}
+
+\section{Procedures}
+
+\section{Saliency models}
+\begin{itemize}
+	\item GBVS: we have an implementation that seems to work properly; my next step related to this model is to read the paper; after that, I intend to check the implementation.
+	\item Meaning maps
+	\item Deep GazeII
+	\item AWS
+	\item Le Meur's
+	\item ICF
+\end{itemize}
+
+\end{document}

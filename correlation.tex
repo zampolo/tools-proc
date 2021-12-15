@@ -1,0 +1,51 @@
+% correlation.tex
+Given two random variables $\mathbf{x}$ and $\mathbf{y}$, the Pearson's correlation coefficient is defined as follows
+\begin{equation}
+  \rho_{xy} = \frac{C_{xy}}{\sigma_x\sigma_y}
+  \label{eq:pearson}
+\end{equation}
+where $C_{xy}$, $\sigma_x$, and $\sigma_y$ denote the covariance of r. v. $\mathbf{x}$ and $\mathbf{y}$, the standard deviation of $\mathbf{x}$, and the standard deviation of $\mathbf{y}$, respectively.
+
+In turn, the covariance $C_{xy}$ is given by
+\begin{equation}
+  C_{xy} = E\{(\mathbf{x}-\eta_x)(\mathbf{y} - \eta_y)\}
+  \label{eq:cov}
+\end{equation}
+where $\eta_x$ and $\eta_y$ represent the mean of $\mathbf{x}$ and $\mathbf{y}$, respectively; and $E\{\cdot\}$ is the expectation operator.
+
+When applied to $n$ paired samples $(x_1,y_1),\cdots,(x_n,y_n)$ equation~\ref{eq:pearson} turns into
+\begin{equation}
+  r_{xy} = \frac{\sum_{i=1}^n(x_i-\bar x)(y_i - \bar y)}{\sqrt{\sum_{i=1}^n(x_i-\bar x)^2}\sqrt{\sum_{i=1}^n(y_i-\bar y)^2}}
+\end{equation}
+where $\bar x$ corresponds to the sample mean
+\begin{equation}
+  \bar x = \frac{1}{n}\sum_{i=1}^n x_i.
+  \label{eq:xsamplemean}
+\end{equation}
+
+The definition of $\bar y$ is similar to equation~\ref{eq:xsamplemean}.
+
+Essentially, the correlation coefficient tries to measure the statistical similarity between two variables. In the area of visual attention modeling, we can compare the performance of different models by assessing the correlation coefficient between model predictions and eye-tracking data (ground-truth).
+% features and limitations
+
+The correlation coefficient ranges from -1 to 1. When the magnitude of the correlation coefficient is close to zero, it means the random variables considered exhibit low correlation. As the magnitude of the correlation coefficient goes to 1, we can say the random variables are increasingly more correlated (directly correlated or inversely correlated, depending on whether the correlation coefficient approaches 1 or -1, respectively).
+
+The correlation coefficient provides a measure of the linear (more precisely, the afim) relationship between two random variables. Thus, for $\alpha$ and $\beta \in \Re$, if 
+\begin{equation}
+	y = \alpha x + \beta
+	\label{eq:afim}
+\end{equation}
+then the correlation coefficient yields 1 or -1 if $\alpha$ is positive or negative, respectively.
+
+Monotonicity in general (beyond linearity) are under-evaluated by the Pearson's correlation coefficient. In this case, other measures should be used, for instance, Spearman correlation coefficient. (are there actual gains in considering Spearman rank correlation coefficient in this case?)
+
+% 1D
+% example with CC of 1
+% example with CC of -1
+% example with CC near zero (really uncorrelated random variables)
+% example with CC of monotonically related random variables (perhaps exponential relationship)
+%
+% 2D
+% GBVS x fixations; Itti&Koch x fixations (need to get some eye-gaze data)
+%
+% Inference: for each image, we can calculate the CC against a ground-truth (several observers contributing). The image CC can be considered as a sample of the truth CC between the model and the reference. By taking many samples, we can have a better estimation of the true CC. Confidence intervals can be estimated too. Attention to Gaussianity constraints.
