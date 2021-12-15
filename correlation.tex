@@ -38,12 +38,34 @@ The correlation coefficient provides a measure of the linear (more precisely, th
 then the correlation coefficient yields 1 or -1 if $\alpha$ is positive or negative, respectively.
 
 Monotonicity in general (beyond linearity) are under-evaluated by the Pearson's correlation coefficient. In this case, other measures should be used, for instance, Spearman correlation coefficient. (are there actual gains in considering Spearman rank correlation coefficient in this case?)
+\begin{figure}
+	\includegraphics[width=\textwidth]{figs/pcc01}
+	\caption{Scatter plot between random variables $x$ and $y$ (high direct correlation). In this figure, $y = 2x+1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.9146$}
+	\label{fig:pcc01}
+\end{figure}
 
+\begin{figure}
+	\includegraphics[width=\textwidth]{figs/pcc02}
+	\caption{Scatter plot between random variables $x$ and $y$ (high inverse correlation). In this figure, $y = -2x-1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=-0.9161$}
+	\label{fig:pcc02}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figs/pcc03}
+	\caption{Scatter plot between random variables $x$ and $y$ (low correlation). Measured $r_{xy}=0.1120$}
+	\label{fig:pcc03}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figs/pcc04}
+	\caption{Scatter plot between random variables $x$ and $y$. In this figure, $y = 1-\exp{-x}+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.8306$}
+	\label{fig:pcc04}
+\end{figure}
 % 1D
-% example with CC of 1
-% example with CC of -1
-% example with CC near zero (really uncorrelated random variables)
-% example with CC of monotonically related random variables (perhaps exponential relationship)
+% *** example with CC of 1
+% *** example with CC of -1
+% *** example with CC near zero (really uncorrelated random variables)
+% *** example with CC of monotonically related random variables (perhaps exponential relationship)
 %
 % 2D
 % GBVS x fixations; Itti&Koch x fixations (need to get some eye-gaze data)

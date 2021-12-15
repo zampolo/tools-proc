@@ -1,2 +1,2 @@
-# icip2022
-Paper written in latex for icip 2022
+# Tools and procedures for assessing performance of visual saliency models
+Review

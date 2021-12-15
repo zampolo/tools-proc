@@ -14,4 +14,4 @@ view:
 	evince $(name-of-the-file).pdf &
 
 clean:
-	rm *.aux *.dvi *.log *.ps *.toc *.bm
+	rm *.aux *.dvi *.log *.ps *.toc *.bm *.out
