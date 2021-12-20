@@ -1,10 +1,10 @@
 % correlation.tex
-Given two random variables $\mathbf{x}$ and $\mathbf{y}$, the Pearson's correlation coefficient is defined as follows
+Given two random variables $\mathbf{x}$ and $\mathbf{y}$, the Pearson correlation coefficient is defined as follows
 \begin{equation}
   \rho_{xy} = \frac{C_{xy}}{\sigma_x\sigma_y}
   \label{eq:pearson}
 \end{equation}
-where $C_{xy}$, $\sigma_x$, and $\sigma_y$ denote the covariance of r. v. $\mathbf{x}$ and $\mathbf{y}$, the standard deviation of $\mathbf{x}$, and the standard deviation of $\mathbf{y}$, respectively.
+where $C_{xy}$, $\sigma_x$, and $\sigma_y$ denote the covariance of random variables $\mathbf{x}$ and $\mathbf{y}$, the standard deviation of $\mathbf{x}$, and the standard deviation of $\mathbf{y}$, respectively.
 
 In turn, the covariance $C_{xy}$ is given by
 \begin{equation}
@@ -17,48 +17,48 @@ When applied to $n$ paired samples $(x_1,y_1),\cdots,(x_n,y_n)$ equation~\ref{eq
 \begin{equation}
   r_{xy} = \frac{\sum_{i=1}^n(x_i-\bar x)(y_i - \bar y)}{\sqrt{\sum_{i=1}^n(x_i-\bar x)^2}\sqrt{\sum_{i=1}^n(y_i-\bar y)^2}}
 \end{equation}
-where $\bar x$ corresponds to the sample mean
+where $\bar x$ corresponds to the sample mean ($\bar y$ is similarly defined)
 \begin{equation}
   \bar x = \frac{1}{n}\sum_{i=1}^n x_i.
   \label{eq:xsamplemean}
 \end{equation}
 
-The definition of $\bar y$ is similar to equation~\ref{eq:xsamplemean}.
-
-Essentially, the correlation coefficient tries to measure the statistical similarity between two variables. In the area of visual attention modeling, we can compare the performance of different models by assessing the correlation coefficient between model predictions and eye-tracking data (ground-truth).
+Essentially, the correlation coefficient measures the statistical similarity between two variables. In the area of visual attention modeling, we can compare the performance of different models by assessing the correlation coefficient between model predictions and eye-tracking data (ground-truth).
 % features and limitations
 
 The correlation coefficient ranges from -1 to 1. When the magnitude of the correlation coefficient is close to zero, it means the random variables considered exhibit low correlation. As the magnitude of the correlation coefficient goes to 1, we can say the random variables are increasingly more correlated (directly correlated or inversely correlated, depending on whether the correlation coefficient approaches 1 or -1, respectively).
 
-The correlation coefficient provides a measure of the linear (more precisely, the afim) relationship between two random variables. Thus, for $\alpha$ and $\beta \in \Re$, if 
+The correlation coefficient provides a measure of the linear relationship between two random variables. Thus, for $\alpha$ and $\beta \in \Re$, if 
 \begin{equation}
 	y = \alpha x + \beta
 	\label{eq:afim}
 \end{equation}
 then the correlation coefficient yields 1 or -1 if $\alpha$ is positive or negative, respectively.
 
-Monotonicity in general (beyond linearity) are under-evaluated by the Pearson's correlation coefficient. In this case, other measures should be used, for instance, Spearman correlation coefficient. (are there actual gains in considering Spearman rank correlation coefficient in this case?)
+Monotonicity in general (beyond linearity) are under-evaluated by the Pearson correlation coefficient. In this case, other measures should be used, for instance, Spearman correlation coefficient. (are there actual gains in considering Spearman rank correlation coefficient in this case?)
+
+Figures \ref{fig:pcc01} -- \ref{fig:pcc04} demonstrate the concept.
 \begin{figure}
 	\includegraphics[width=\textwidth]{figs/pcc01}
-	\caption{Scatter plot between random variables $x$ and $y$ (high direct correlation). In this figure, $y = 2x+1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.9146$}
+	\caption{Scatter plot between random samples $x$ and $y$ (high direct correlation). In this figure, $y = 2x+1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.9146$}
 	\label{fig:pcc01}
 \end{figure}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{figs/pcc02}
-	\caption{Scatter plot between random variables $x$ and $y$ (high inverse correlation). In this figure, $y = -2x-1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=-0.9161$}
+	\caption{Scatter plot between random samples $x$ and $y$ (high inverse correlation). In this figure, $y = -2x-1+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=-0.9161$}
 	\label{fig:pcc02}
 \end{figure}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{figs/pcc03}
-	\caption{Scatter plot between random variables $x$ and $y$ (low correlation). Measured $r_{xy}=0.1120$}
+	\caption{Scatter plot between random samples $x$ and $y$ (low correlation). Measured $r_{xy}=0.1120$}
 	\label{fig:pcc03}
 \end{figure}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{figs/pcc04}
-	\caption{Scatter plot between random variables $x$ and $y$. In this figure, $y = 1-\exp{-x}+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.8306$}
+	\caption{Scatter plot between random samples $x$ and $y$. In this figure, $y = 1-\exp{-x}+\eta$, where $\eta$ is a normal random variable. Measured $r_{xy}=0.8306$}
 	\label{fig:pcc04}
 \end{figure}
 % 1D
