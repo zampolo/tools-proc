@@ -1,41 +1,42 @@
 % correlation.tex
-Given two random variables $\mathbf{x}$ and $\mathbf{y}$, the Pearson correlation coefficient is defined as follows
+Given two random variables $X$ and $Y$, the Pearson correlation coefficient (PCC) is defined as 
 \begin{equation}
-  \rho_{xy} = \frac{C_{xy}}{\sigma_x\sigma_y}
+  \rho_{XY} = \frac{C_{XY}}{\sigma_X\sigma_Y},
   \label{eq:pearson}
 \end{equation}
-where $C_{xy}$, $\sigma_x$, and $\sigma_y$ denote the covariance of random variables $\mathbf{x}$ and $\mathbf{y}$, the standard deviation of $\mathbf{x}$, and the standard deviation of $\mathbf{y}$, respectively.
+where $C_{XY}$, $\sigma_X$, and $\sigma_Y$ denote the covariance of $X$ and $Y$, the standard deviation of $X$, and the standard deviation of $Y$, respectively.
 
-In turn, the covariance $C_{xy}$ is given by
+In turn, the covariance $C_{XY}$ is given by
 \begin{equation}
-  C_{xy} = E\{(\mathbf{x}-\eta_x)(\mathbf{y} - \eta_y)\}
+  C_{XY} = E\{(X-\eta_X)(Y - \eta_Y)\},
   \label{eq:cov}
 \end{equation}
-where $\eta_x$ and $\eta_y$ represent the mean of $\mathbf{x}$ and $\mathbf{y}$, respectively; and $E\{\cdot\}$ is the expectation operator.
+where $\eta_X$ and $\eta_Y$ represent the mean of $X$ and $Y$, respectively; and $E\{\cdot\}$ is the expectation operator.
 
-When applied to $n$ paired samples $(x_1,y_1),\cdots,(x_n,y_n)$ equation~\ref{eq:pearson} turns into
+When applied to $n$ paired samples $(x_1,y_1),\cdots,(x_n,y_n)$ equation~\ref{eq:pearson} turns into (sample PCC)
 \begin{equation}
   r_{xy} = \frac{\sum_{i=1}^n(x_i-\bar x)(y_i - \bar y)}{\sqrt{\sum_{i=1}^n(x_i-\bar x)^2}\sqrt{\sum_{i=1}^n(y_i-\bar y)^2}}
 \end{equation}
-where $\bar x$ corresponds to the sample mean ($\bar y$ is similarly defined)
+where $\bar x$ corresponds to the sample mean of $x_i$ ($\bar y$ is similarly defined) as follows.
 \begin{equation}
-  \bar x = \frac{1}{n}\sum_{i=1}^n x_i.
+  \bar x = \frac{1}{n}\sum_{i=1}^n x_i
   \label{eq:xsamplemean}
 \end{equation}
 
-Essentially, the correlation coefficient measures the statistical similarity between two variables. In the area of visual attention modeling, we can compare the performance of different models by assessing the correlation coefficient between model predictions and eye-tracking data (ground-truth).
+Essentially, the PCC is a measure of statistical similarity between two random variables (or samples). In the area of visual attention modeling, we use the PCC to assess resemblance between a saliency map prediction (model outup) and eye-tracking data (ground-truth).
 % features and limitations
 
-The correlation coefficient ranges from -1 to 1. When the magnitude of the correlation coefficient is close to zero, it means the random variables considered exhibit low correlation. As the magnitude of the correlation coefficient goes to 1, we can say the random variables are increasingly more correlated (directly correlated or inversely correlated, depending on whether the correlation coefficient approaches 1 or -1, respectively).
+The PCC ranges from -1 to 1. When the magnitude of the PCC is close to zero, it indicates the random variables are weakly correlated. As the magnitude of the PCC approaches 1, the random variables are increasingly more correlated (directly or inversely correlated, depending on whether the PCC goes towards 1 or -1, respectively).
 
-The correlation coefficient provides a measure of the linear relationship between two random variables. Thus, for $\alpha$ and $\beta \in \Re$, if 
+Specifically, the PCC measures of the linear relationship between two random variables. Thus, for $\alpha \in \Re$ and $\beta \in \Re$, if 
 \begin{equation}
-	y = \alpha x + \beta
+	y = \alpha x + \beta,
 	\label{eq:afim}
 \end{equation}
-then the correlation coefficient yields 1 or -1 if $\alpha$ is positive or negative, respectively.
+then the PCC yields 1 or -1, depending on $\alpha$ is positive or negative, respectively.
 
-Monotonicity in general (beyond linearity) are under-evaluated by the Pearson correlation coefficient. In this case, other measures should be used, for instance, Spearman correlation coefficient. (are there actual gains in considering Spearman rank correlation coefficient in this case?)
+Monotonicity in general (beyond linearity) are under-evaluated by the PCC. In this case, other metrics should be used, for instance, Spearman correlation coefficient. 
+%(are there actual gains in considering Spearman rank correlation coefficient in this case?)
 
 Figures \ref{fig:pcc01} -- \ref{fig:pcc04} demonstrate the concept.
 \begin{figure}
